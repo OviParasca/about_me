@@ -1,61 +1,78 @@
 'use strict';
 
-// string to sumamry order
+// my variables
+var userPoints = 0;
+var alertPrefixString = '';
 var finalOrderString = '';
 
-// logic for all the prompts/alerts
-var coffee = prompt('Hi, welcome to Ovi\'s Covfefe Shop.\r\nWhat kind of coffee would you like?');
-console.log('The user wants a ' + coffee);
+// the intro alert asking the user to play my game
+var introAlert = alert('Hi! Welcome to my guessing game. Press \'ok\' to start.');
+var howToAlert = alert('To play the game please answer with Yes/No, and you\'ll receive points as you get them right.');
+console.log('The user started to play the game.');
 
-var cupSize = prompt('What size cup would you like?');
-var cupSizeString = 'So you want a ';
-console.log('The user wants a ' + cupSize + ' ' + coffee + '.');
-
-// first Yes/No prompt, asking the user if they want to biggie-size their order
-var getBiggerCupSize = prompt('Would you like to get an extra-large cup for just an extra 49 cents? (Y/N)');
-if (getBiggerCupSize.toLowerCase() === 'y' || getBiggerCupSize.toLowerCase() === 'yes') {
-  console.log('The user did elect to get a bigger size cup of coffee.');
-  cupSizeString = 'So you want an ';
-  cupSize = 'extra-large';
+// the 1st prompt asks the user if they know where i was born
+var born = prompt('Was i born in Romania? (Y/N)');
+if (born.toLowerCase() === 'y' || born.toLowerCase() === 'yes') {
+  userPoints += 1;
+  alertPrefixString = 'Correct! ';
+  console.log('The user answered question 1 correctly');
 } else {
-  console.log('The user did not want a bigger size of coffee.');
+  alertPrefixString = 'Bummer! ';
+  console.log('The user answered question 1 incorrectly');
 }
+var bornAlert = alert(alertPrefixString + 'I was born in Romania. You now have ' + userPoints + ' points.');
 
-// second Yes/No prompt, asking the user if they want an extra shot of espresso
-var addEspresso = prompt('Would you like an extra shot of espresso? (Y/N)');
-if (addEspresso.toLowerCase() === 'y' || addEspresso.toLowerCase() === 'yes') {
-  console.log('The user does want an extra show of espresso');
-  finalOrderString = ' with an extra shot of espresso';
+// the 2nd question asks the user if i like coffee
+var coffee = prompt('Do i enjoy coffee? (Y/N)').toLowerCase(); // i wanted to add the toLowerCase() function at the end of the prompt to show another way of doing the same thing
+if (coffee === 'n' || coffee === 'no') {
+  userPoints += 1;
+  alertPrefixString = 'Correct! ';
+  console.log('The user answered question 2 correctly');
 } else {
-  console.log('The user does NOT want an extra show of espresso. womp womp');
+  alertPrefixString = 'Bummer! ';
+  console.log('The user answered question 2 incorrectly');
 }
+var coffeeAlert = alert(alertPrefixString + 'Although i live in Seattle i\'m not a huge coffee drinker. But i do enjoy a nice blended drink. \r\nYou now have ' + userPoints + ' points.');
 
-// third Yes/No prompt, asking the user if they want suger
-var addSugar = prompt('Would you like sugar? (Y/N)');
-if (addSugar.toLowerCase() === 'y' || addSugar.toLowerCase() === 'yes') {
-  console.log('The user wants some sugar');
-  finalOrderString = finalOrderString + ' with some sugar';
+// the 3rd question asks the user if i drive a red car
+var carColor = prompt('Do I drive a red car? (Y/N)');
+if (carColor.toLowerCase() === 'yes' || carColor.toLowerCase() === 'y') {
+  userPoints += 1;
+  alertPrefixString = 'Correct! ';
+  console.log('The user answered question 3 correctly');
 } else {
-  console.log('The user does not want some sugar');
+  alertPrefixString = 'Bummer! ';
+  console.log('The user answered question 3 incorrectly');
 }
+var carColorAlert = alert(alertPrefixString + 'I love my red car :) \r\nYou now have ' + userPoints + ' points.');
 
-// fourth Yes/No prompt, asking the user if they want to add ghost chili peppers to their coffee :)
-var ghostPepper = prompt('Would you like to add a dash of Ghost Pepper to your coffee? (Y/N)');
-if (ghostPepper.toLowerCase() === 'y' || ghostPepper.toLowerCase() === 'yes') {
-  console.log('The user wants some ghost pepper in their drink!');
-  finalOrderString = finalOrderString + ' with some ghost pepper spice';
+// the 4th question asks the user if i went to school in Pennsylvania
+var school = prompt('Did I go to school in Pennsylvania? (Y/N)');
+if (school.toLowerCase() === 'yes' || school.toLowerCase() === 'y') {
+  userPoints += 1;
+  alertPrefixString = 'Correct! ';
+  console.log('The user answered question 4 correctly');
 } else {
-  console.log('Phew, the user was smart not get the hottttt ghost pepper spice in their drink.');
+  alertPrefixString = 'Bummer! ';
+  console.log('The user answered question 4 incorrectly');
 }
+var schoolAlert = alert(alertPrefixString + 'I grew up in Pennsylvania, i did almost all of my schooling there including my college degree. \r\nYou now have ' + userPoints + ' points.');
 
-// fifth Yes/No prompt, asking the user if they would like a pastry
-var getPastry = prompt('Would you like a pastry or cookie? (Y/N)');
-if (getPastry.toLowerCase() === 'y' || getPastry.toLowerCase() === 'yes') {
-  console.log('The user wants a pastry/cookie as well.');
-  finalOrderString = finalOrderString + ' and with a pastry';
+// the 5th question asks the user if i'm an iOS developer
+var isiOSDev = prompt('Ok, last question. I mentioned on our first day of class that i am an iOS developer. Is that true? (Y/N)');
+if (isiOSDev.toLowerCase() === 'yes' || isiOSDev.toLowerCase() === 'y') {
+  userPoints += 1;
+  alertPrefixString = 'Correct! ';
+  console.log('The user answered question 5 correctly');
 } else {
-  console.log('The user has elected to just get the coffee.');
+  alertPrefixString = 'Bummer! ';
+  console.log('The user answered question 5 incorrectly');
 }
+var iOSDevAlert = alert(alertPrefixString + 'I have a B.S. degree and self-taught myself Objective-C and Swift development after gradating. \r\nYou now have ' + userPoints + ' points.');
 
-// final alert prompt
-var finalOrderAlert = alert(cupSizeString + cupSize + ' ' + coffee + finalOrderString + '.');
+// final alert
+if (userPoints == 5) {
+  var finalAlert = alert('Congratulations! You got all of the answers right!');
+} else {
+  var finalAlert = alert('Great Try! You didn\'t get all the answers right, so let\'s try to get them right next time :)');
+}
