@@ -57,6 +57,5 @@ if (getPastry.toLowerCase() === 'y' || getPastry.toLowerCase() === 'yes') {
   console.log('The user has elected to just get the coffee.');
 }
 
-
 // final alert prompt
-var finalOrderAlert = alert(cupSizeString + cupSize + ' ' + coffee +  finalOrderString + '.');
+var finalOrderAlert = alert(cupSizeString + cupSize + ' ' + coffee + finalOrderString + '.');
