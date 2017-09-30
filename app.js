@@ -3,7 +3,6 @@
 // my variables
 var userPoints = 0;
 var alertPrefixString = '';
-var finalOrderString = '';
 
 // the intro alert asking the user to play my game
 var introAlert = alert('Hi! Welcome to my guessing game. Press \'ok\' to start.');
