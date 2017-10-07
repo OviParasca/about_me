@@ -45,6 +45,7 @@ function askLikesCoffee() {
     console.log('The user answered question 2 incorrectly');
   }
   var coffeeAlert = alert(alertPrefixString + responsesArr[1]);
+  askRedCar();
 }
 
 // the 3rd question asks the user if i drive a red car
@@ -59,10 +60,11 @@ function askRedCar() {
     console.log('The user answered question 3 incorrectly');
   }
   var carColorAlert = alert(alertPrefixString + responsesArr[2]);
+  askSchool();
 }
 
 // the 4th question asks the user if i went to school in Pennsylvania
-function askSchoolPennsylvania(){
+function askSchool(){
   var school = prompt(questionsArr[3]).toLowerCase();
   if (school === 'yes' || school === 'y') {
     userPoints += 1;
@@ -74,19 +76,20 @@ function askSchoolPennsylvania(){
   }
   var schoolAlert = alert(alertPrefixString + responsesArr[3]);
 }
-/*
 // the 5th question asks the user if i'm an iOS developer
-var isiOSDev = prompt(questionsArr[4]).toLowerCase();
-if (isiOSDev === 'yes' || isiOSDev === 'y') {
-  userPoints += 1;
-  alertPrefixString = 'Correct! ';
-  console.log('The user answered question 5 correctly');
-} else {
-  alertPrefixString = 'Bummer! ';
-  console.log('The user answered question 5 incorrectly');
+function askIos(){
+  var isiOSDev = prompt(questionsArr[4]).toLowerCase();
+  if (isiOSDev === 'yes' || isiOSDev === 'y') {
+    userPoints += 1;
+    alertPrefixString = 'Correct! ';
+    console.log('The user answered question 5 correctly');
+  } else {
+    alertPrefixString = 'Bummer! ';
+    console.log('The user answered question 5 incorrectly');
+  }
+  var iOSDevAlert = alert(alertPrefixString + responsesArr[4]);
 }
-var iOSDevAlert = alert(alertPrefixString + responsesArr[4]);
-
+/*
 // 6th question is a number guessing question
 // The user cannot advance unless they answer my age correctly. Afterwhich they are awarded a point
 var myAge = prompt(questionsArr[5]);
