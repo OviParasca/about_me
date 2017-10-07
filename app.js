@@ -11,10 +11,12 @@ var responsesArr = ['I was born in Romania.', 'Although i live in Seattle i\'m n
 var alertsArr = ['Hi! Welcome to my guessing game. Press \'ok\' to start.', 'To play the game please answer with Yes/No, and you\'ll receive points as you get them right.'];
 
 // the intro alert asking the user to play my game
-var introAlert = alert(alertsArr[0]);
-var howToAlert = alert(alertsArr[1]);
-console.log('The user started to play the game.');
-
+function showIntros() {
+  var introAlert = alert(alertsArr[0]);
+  var howToAlert = alert(alertsArr[1]);
+  console.log('The user started to play the game.');
+}
+/*
 // the 1st prompt asks the user if they know where i was born
 var born = prompt(questionsArr[0]).toLowerCase();
 if (born === 'y' || born === 'yes') {
@@ -116,3 +118,4 @@ if (userPoints == 7) {
 } else {
   var finalAlert = alert('Great Job! You got: ' + userPoints + ' out of 7. Try again to get all the questions right next time ;)');
 }
+*/
