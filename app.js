@@ -46,19 +46,21 @@ function askLikesCoffee() {
   }
   var coffeeAlert = alert(alertPrefixString + responsesArr[1]);
 }
-/*
-// the 3rd question asks the user if i drive a red car
-var carColor = prompt(questionsArr[2]).toLowerCase();
-if (carColor === 'yes' || carColor === 'y') {
-  userPoints += 1;
-  alertPrefixString = 'Correct! ';
-  console.log('The user answered question 3 correctly');
-} else {
-  alertPrefixString = 'Bummer! ';
-  console.log('The user answered question 3 incorrectly');
-}
-var carColorAlert = alert(alertPrefixString + responsesArr[2]);
 
+// the 3rd question asks the user if i drive a red car
+function askRedCar() {
+  var carColor = prompt(questionsArr[2]).toLowerCase();
+  if (carColor === 'yes' || carColor === 'y') {
+    userPoints += 1;
+    alertPrefixString = 'Correct! ';
+    console.log('The user answered question 3 correctly');
+  } else {
+    alertPrefixString = 'Bummer! ';
+    console.log('The user answered question 3 incorrectly');
+  }
+  var carColorAlert = alert(alertPrefixString + responsesArr[2]);
+}
+/*
 // the 4th question asks the user if i went to school in Pennsylvania
 var school = prompt(questionsArr[3]).toLowerCase();
 if (school === 'yes' || school === 'y') {
