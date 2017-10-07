@@ -75,6 +75,7 @@ function askSchool(){
     console.log('The user answered question 4 incorrectly');
   }
   var schoolAlert = alert(alertPrefixString + responsesArr[3]);
+  askIos();
 }
 // the 5th question asks the user if i'm an iOS developer
 function askIos(){
@@ -129,12 +130,14 @@ function askCities(){
       myCitiesAttempts--;
     }
   }
+  showFinalAlert();
 }
-/*
+
 // final alert
-if (userPoints == 7) {
-  var finalAlert = alert('Congratulations! You answered all 7 questions correctly.');
-} else {
-  var finalAlert = alert('Great Job! You got: ' + userPoints + ' out of 7. Try again to get all the questions right next time ;)');
+function showFinalAlert(){
+  if (userPoints == 7) {
+    var finalAlert = alert('Congratulations! You answered all 7 questions correctly.');
+  } else {
+    var finalAlert = alert('Great Job! You got: ' + userPoints + ' out of 7. Try again to get all the questions right next time ;)');
+  }
 }
-*/
