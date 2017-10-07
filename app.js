@@ -108,26 +108,29 @@ function askNumber (){
       break;
     }
   }
+  askCities();
 }
-/*
+
 // 7th question accepts multiple answers
 // The user cannot advance unless they answer the cities i previously lived at correctly. Afterwhich they are awarded a point
-var myCities = prompt(questionsArr[6]).toLowerCase();
-var myCitiesAttempts = 5;
+function askCities(){
+  var myCities = prompt(questionsArr[6]).toLowerCase();
+  var myCitiesAttempts = 5;
 
-while (myCitiesAttempts > 0) {
-  if (myCities === 'norristown' || myCities === 'reading' || myCities === 'vancouver') {
-    console.log('Yay, they user guessed a city i used to live in.');
-    userPoints += 1;
-    myCitiesAttempts = 0;
-    break;
-  } else {
-    alert('Uh-Oh. That\'s not right, you have ' + myCitiesAttempts + ' attempts left.');
-    myCities = prompt(questionsArr[6]).toLowerCase();
-    myCitiesAttempts--;
+  while (myCitiesAttempts > 0) {
+    if (myCities === 'norristown' || myCities === 'reading' || myCities === 'vancouver') {
+      console.log('Yay, they user guessed a city i used to live in.');
+      userPoints += 1;
+      myCitiesAttempts = 0;
+      break;
+    } else {
+      alert('Uh-Oh. That\'s not right, you have ' + myCitiesAttempts + ' attempts left.');
+      myCities = prompt(questionsArr[6]).toLowerCase();
+      myCitiesAttempts--;
+    }
   }
 }
-
+/*
 // final alert
 if (userPoints == 7) {
   var finalAlert = alert('Congratulations! You answered all 7 questions correctly.');
