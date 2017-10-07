@@ -15,20 +15,23 @@ function showIntros() {
   var introAlert = alert(alertsArr[0]);
   var howToAlert = alert(alertsArr[1]);
   console.log('The user started to play the game.');
+  askBirthLocation();
+}
+
+// the 1st prompt asks the user if they know where i was born
+function askBirthLocation() {
+  var born = prompt(questionsArr[0]).toLowerCase();
+  if (born === 'y' || born === 'yes') {
+    userPoints += 1;
+    alertPrefixString = 'Correct! ';
+    console.log('The user answered question 1 correctly');
+  } else {
+    alertPrefixString = 'Bummer! ';
+    console.log('The user answered question 1 incorrectly');
+  }
+  var bornAlert = alert(alertPrefixString + responsesArr[0]);
 }
 /*
-// the 1st prompt asks the user if they know where i was born
-var born = prompt(questionsArr[0]).toLowerCase();
-if (born === 'y' || born === 'yes') {
-  userPoints += 1;
-  alertPrefixString = 'Correct! ';
-  console.log('The user answered question 1 correctly');
-} else {
-  alertPrefixString = 'Bummer! ';
-  console.log('The user answered question 1 incorrectly');
-}
-var bornAlert = alert(alertPrefixString + responsesArr[0]);
-
 // the 2nd question asks the user if i like coffee
 var coffee = prompt(questionsArr[1]).toLowerCase();
 if (coffee === 'n' || coffee === 'no') {
