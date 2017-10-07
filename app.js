@@ -30,20 +30,23 @@ function askBirthLocation() {
     console.log('The user answered question 1 incorrectly');
   }
   var bornAlert = alert(alertPrefixString + responsesArr[0]);
+  askLikesCoffee();
+}
+
+// the 2nd question asks the user if i like coffee
+function askLikesCoffee() {
+  var coffee = prompt(questionsArr[1]).toLowerCase();
+  if (coffee === 'n' || coffee === 'no') {
+    userPoints += 1;
+    alertPrefixString = 'Correct! ';
+    console.log('The user answered question 2 correctly');
+  } else {
+    alertPrefixString = 'Bummer! ';
+    console.log('The user answered question 2 incorrectly');
+  }
+  var coffeeAlert = alert(alertPrefixString + responsesArr[1]);
 }
 /*
-// the 2nd question asks the user if i like coffee
-var coffee = prompt(questionsArr[1]).toLowerCase();
-if (coffee === 'n' || coffee === 'no') {
-  userPoints += 1;
-  alertPrefixString = 'Correct! ';
-  console.log('The user answered question 2 correctly');
-} else {
-  alertPrefixString = 'Bummer! ';
-  console.log('The user answered question 2 incorrectly');
-}
-var coffeeAlert = alert(alertPrefixString + responsesArr[1]);
-
 // the 3rd question asks the user if i drive a red car
 var carColor = prompt(questionsArr[2]).toLowerCase();
 if (carColor === 'yes' || carColor === 'y') {
