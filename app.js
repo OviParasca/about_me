@@ -88,25 +88,28 @@ function askIos(){
     console.log('The user answered question 5 incorrectly');
   }
   var iOSDevAlert = alert(alertPrefixString + responsesArr[4]);
-}
-/*
-// 6th question is a number guessing question
-// The user cannot advance unless they answer my age correctly. Afterwhich they are awarded a point
-var myAge = prompt(questionsArr[5]);
-var myAgeAttempts = 3;
-while (myAgeAttempts > 0) {
-  if (myAge != 30) {
-    alert('Uh-Oh. That\'s not right, you have ' + myAgeAttempts + ' attempts left.');
-    myAge = prompt(questionsArr[5]);
-    myAgeAttempts--;
-  } else {
-    console.log('Yay, the user guessed my age. I feel old :(');
-    userPoints += 1;
-    myAgeAttempts = 0;
-    break;
-  }
+  askNumber();
 }
 
+// 6th question is a number guessing question
+// The user cannot advance unless they answer my age correctly. Afterwhich they are awarded a point
+function askNumber (){
+  var myAge = prompt(questionsArr[5]);
+  var myAgeAttempts = 3;
+  while (myAgeAttempts > 0) {
+    if (myAge != 30) {
+      alert('Uh-Oh. That\'s not right, you have ' + myAgeAttempts + ' attempts left.');
+      myAge = prompt(questionsArr[5]);
+      myAgeAttempts--;
+    } else {
+      console.log('Yay, the user guessed my age. I feel old :(');
+      userPoints += 1;
+      myAgeAttempts = 0;
+      break;
+    }
+  }
+}
+/*
 // 7th question accepts multiple answers
 // The user cannot advance unless they answer the cities i previously lived at correctly. Afterwhich they are awarded a point
 var myCities = prompt(questionsArr[6]).toLowerCase();
